@@ -1,0 +1,12 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP HC-05
+D HC-05 Bluetooth SPP Module
+$ENDCMP
+#
+$CMP TCS230
+D TCS230 Color Sensor Module
+K TCS230, Color, Sensor
+$ENDCMP
+#
+#End Doc Library

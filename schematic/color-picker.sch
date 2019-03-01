@@ -1,0 +1,364 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr User 9126 5489
+encoding utf-8
+Sheet 1 1
+Title "Bluetooth color picker"
+Date "2019-03-01"
+Rev "1.0.0"
+Comp "Dilshan R Jayakody"
+Comment1 "jayakody2000lk@gmail.com"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_PIC16:PIC16F628A-IP U1
+U 1 1 5C787D64
+P 4300 2050
+F 0 "U1" H 5000 2800 50  0000 C CNN
+F 1 "PIC16F628A" H 5000 2700 50  0000 C CNN
+F 2 "" H 4300 2050 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/40300c.pdf" H 4300 2050 50  0001 C CNN
+	1    4300 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C787F1E
+P 4300 3200
+F 0 "#PWR?" H 4300 2950 50  0001 C CNN
+F 1 "GND" H 4305 3027 50  0000 C CNN
+F 2 "" H 4300 3200 50  0001 C CNN
+F 3 "" H 4300 3200 50  0001 C CNN
+	1    4300 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C787F4A
+P 4300 1200
+F 0 "#PWR?" H 4300 1050 50  0001 C CNN
+F 1 "+5V" H 4315 1373 50  0000 C CNN
+F 2 "" H 4300 1200 50  0001 C CNN
+F 3 "" H 4300 1200 50  0001 C CNN
+	1    4300 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 1200 4300 1350
+$Comp
+L Device:Crystal Y1
+U 1 1 5C788011
+P 5800 2450
+F 0 "Y1" H 5800 2600 50  0000 C CNN
+F 1 "12.000MHz" H 5800 2300 50  0000 C CNN
+F 2 "" H 5800 2450 50  0001 C CNN
+F 3 "~" H 5800 2450 50  0001 C CNN
+	1    5800 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5C7881C2
+P 5500 2900
+F 0 "C1" H 5615 2946 50  0000 L CNN
+F 1 "22pF" H 5615 2855 50  0000 L CNN
+F 2 "" H 5538 2750 50  0001 C CNN
+F 3 "~" H 5500 2900 50  0001 C CNN
+	1    5500 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5C7881EA
+P 6100 2900
+F 0 "C2" H 6215 2946 50  0000 L CNN
+F 1 "22pF" H 6215 2855 50  0000 L CNN
+F 2 "" H 6138 2750 50  0001 C CNN
+F 3 "~" H 6100 2900 50  0001 C CNN
+	1    6100 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C788242
+P 5500 3200
+F 0 "#PWR?" H 5500 2950 50  0001 C CNN
+F 1 "GND" H 5505 3027 50  0000 C CNN
+F 2 "" H 5500 3200 50  0001 C CNN
+F 3 "" H 5500 3200 50  0001 C CNN
+	1    5500 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C788262
+P 6100 3200
+F 0 "#PWR?" H 6100 2950 50  0001 C CNN
+F 1 "GND" H 6105 3027 50  0000 C CNN
+F 2 "" H 6100 3200 50  0001 C CNN
+F 3 "" H 6100 3200 50  0001 C CNN
+	1    6100 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 2350 5500 2350
+Wire Wire Line
+	5500 2350 5500 2450
+Wire Wire Line
+	5400 2250 6100 2250
+Wire Wire Line
+	6100 2250 6100 2450
+Wire Wire Line
+	5500 3050 5500 3200
+Wire Wire Line
+	6100 3050 6100 3200
+Wire Wire Line
+	4300 2750 4300 3200
+Wire Wire Line
+	5650 2450 5500 2450
+Connection ~ 5500 2450
+Wire Wire Line
+	5500 2450 5500 2750
+Wire Wire Line
+	5950 2450 6100 2450
+Connection ~ 6100 2450
+Wire Wire Line
+	6100 2450 6100 2750
+$Comp
+L color-picker:HC-05 U2
+U 1 1 5C78A134
+P 2300 1550
+F 0 "U2" H 1900 1715 50  0000 C CNN
+F 1 "HC-05" H 1900 1624 50  0000 C CNN
+F 2 "" H 2300 1550 50  0001 C CNN
+F 3 "" H 2300 1550 50  0001 C CNN
+	1    2300 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 1750 3100 1850
+Wire Wire Line
+	3100 1850 3200 1850
+Wire Wire Line
+	2400 1850 3000 1850
+Wire Wire Line
+	3000 1850 3100 1750
+Wire Wire Line
+	3100 1750 3200 1750
+NoConn ~ 2400 1650
+NoConn ~ 2400 1950
+$Comp
+L Device:R R1
+U 1 1 5C78A892
+P 2750 1750
+F 0 "R1" V 2543 1750 50  0000 C CNN
+F 1 "1K" V 2634 1750 50  0000 C CNN
+F 2 "" V 2680 1750 50  0001 C CNN
+F 3 "~" H 2750 1750 50  0001 C CNN
+	1    2750 1750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5C78A957
+P 2500 2200
+F 0 "R2" H 2570 2246 50  0000 L CNN
+F 1 "1.5K" H 2570 2155 50  0000 L CNN
+F 2 "" V 2430 2200 50  0001 C CNN
+F 3 "~" H 2500 2200 50  0001 C CNN
+	1    2500 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 1750 3000 1750
+$Comp
+L power:GND #PWR?
+U 1 1 5C78ADB5
+P 2500 2450
+F 0 "#PWR?" H 2500 2200 50  0001 C CNN
+F 1 "GND" H 2505 2277 50  0000 C CNN
+F 2 "" H 2500 2450 50  0001 C CNN
+F 3 "" H 2500 2450 50  0001 C CNN
+	1    2500 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 1750 2500 1750
+Wire Wire Line
+	2500 2050 2500 1750
+Connection ~ 2500 1750
+Wire Wire Line
+	2500 1750 2600 1750
+Wire Wire Line
+	2500 2350 2500 2450
+$Comp
+L power:+5V #PWR?
+U 1 1 5C78B31D
+P 1300 1200
+F 0 "#PWR?" H 1300 1050 50  0001 C CNN
+F 1 "+5V" H 1315 1373 50  0000 C CNN
+F 2 "" H 1300 1200 50  0001 C CNN
+F 3 "" H 1300 1200 50  0001 C CNN
+	1    1300 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 1650 1300 1650
+Wire Wire Line
+	1300 1650 1300 1200
+$Comp
+L power:GND #PWR?
+U 1 1 5C78B5CC
+P 1300 2450
+F 0 "#PWR?" H 1300 2200 50  0001 C CNN
+F 1 "GND" H 1305 2277 50  0000 C CNN
+F 2 "" H 1300 2450 50  0001 C CNN
+F 3 "" H 1300 2450 50  0001 C CNN
+	1    1300 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 1950 1300 1950
+Wire Wire Line
+	1300 1950 1300 2450
+$Comp
+L color-picker:TCS230 U3
+U 1 1 5C78B9F6
+P 7150 2100
+F 0 "U3" H 7175 1335 50  0000 C CNN
+F 1 "TCS230" H 7175 1426 50  0000 C CNN
+F 2 "" H 7150 2100 50  0001 C CNN
+F 3 "" H 7150 2100 50  0001 C CNN
+	1    7150 2100
+	-1   0    0    1   
+$EndComp
+Entry Wire Line
+	5600 1850 5700 1750
+Entry Wire Line
+	5600 1750 5700 1650
+Entry Wire Line
+	5600 1650 5700 1550
+Entry Wire Line
+	6400 1750 6500 1850
+Entry Wire Line
+	6400 1650 6500 1750
+Entry Wire Line
+	6400 1500 6500 1600
+Wire Wire Line
+	6500 1850 6700 1850
+Wire Wire Line
+	6500 1750 6700 1750
+Wire Wire Line
+	6500 1600 6700 1600
+Wire Wire Line
+	5400 1650 5600 1650
+Wire Wire Line
+	5400 1750 5600 1750
+Wire Wire Line
+	5400 1850 5600 1850
+Wire Bus Line
+	5700 1400 6400 1400
+Text Label 5450 1850 0    50   ~ 0
+RA2
+Text Label 5450 1750 0    50   ~ 0
+RA1
+Text Label 5450 1650 0    50   ~ 0
+RA0
+Text Label 6550 1600 0    50   ~ 0
+RA2
+Text Label 6550 1750 0    50   ~ 0
+RA1
+Text Label 6550 1850 0    50   ~ 0
+RA0
+$Comp
+L power:GND #PWR?
+U 1 1 5C7906CC
+P 6550 2450
+F 0 "#PWR?" H 6550 2200 50  0001 C CNN
+F 1 "GND" H 6555 2277 50  0000 C CNN
+F 2 "" H 6550 2450 50  0001 C CNN
+F 3 "" H 6550 2450 50  0001 C CNN
+	1    6550 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 1950 6550 1950
+Wire Wire Line
+	6550 1950 6550 2150
+Wire Wire Line
+	6700 2150 6550 2150
+Connection ~ 6550 2150
+$Comp
+L power:+5V #PWR?
+U 1 1 5C791745
+P 6200 2000
+F 0 "#PWR?" H 6200 1850 50  0001 C CNN
+F 1 "+5V" H 6215 2173 50  0000 C CNN
+F 2 "" H 6200 2000 50  0001 C CNN
+F 3 "" H 6200 2000 50  0001 C CNN
+	1    6200 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 2050 6200 2050
+Wire Wire Line
+	6200 2050 6200 2000
+$Comp
+L power:+5V #PWR?
+U 1 1 5C792364
+P 7650 1200
+F 0 "#PWR?" H 7650 1050 50  0001 C CNN
+F 1 "+5V" H 7665 1373 50  0000 C CNN
+F 2 "" H 7650 1200 50  0001 C CNN
+F 3 "" H 7650 1200 50  0001 C CNN
+	1    7650 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 1200 7650 1600
+Wire Wire Line
+	7650 1600 7550 1600
+Wire Wire Line
+	6550 2150 6550 2450
+$Comp
+L power:GND #PWR?
+U 1 1 5C792FCF
+P 7650 2450
+F 0 "#PWR?" H 7650 2200 50  0001 C CNN
+F 1 "GND" H 7655 2277 50  0000 C CNN
+F 2 "" H 7650 2450 50  0001 C CNN
+F 3 "" H 7650 2450 50  0001 C CNN
+	1    7650 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 2150 7650 2150
+$Comp
+L power:+5V #PWR?
+U 1 1 5C793727
+P 5850 2000
+F 0 "#PWR?" H 5850 1850 50  0001 C CNN
+F 1 "+5V" H 5865 2173 50  0000 C CNN
+F 2 "" H 5850 2000 50  0001 C CNN
+F 3 "" H 5850 2000 50  0001 C CNN
+	1    5850 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 2150 5850 2150
+Wire Wire Line
+	5850 2150 5850 2000
+Wire Wire Line
+	7650 2150 7650 2450
+Wire Bus Line
+	5700 1400 5700 1750
+Wire Bus Line
+	6400 1400 6400 1750
+Text Notes 600  4900 0    50   ~ 0
+HC-05 (U2) configuration:\n\n - Baud rate: 9600\n - Device name: Color Picker
+Text Notes 600  4400 0    50   ~ 0
+Use 5V (500mA) power supply unit to drive this circuit.
+$EndSCHEMATC
